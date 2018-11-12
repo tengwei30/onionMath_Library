@@ -1,0 +1,55 @@
+page {
+  background-color: #fff;
+}
+.root-container{
+  width: 100%;
+}
+.book-image{
+  margin: 208rpx auto 0;
+  width: 194rpx;
+  height: 264rpx;
+  display: inherit;
+  border-radius: 8rpx;
+}
+.onion-library{
+  display: block;
+  margin: 20rpx auto 0;
+  text-align: center;
+  font-size: 40rpx;
+  color: #2F3337;
+}
+.book-count-container{
+  margin: 12rpx auto 0;
+  text-align: center;
+}
+.count-text{
+  font-size: 56rpx;
+  color: #2F3337;
+}
+.count-number{
+  color: #FFA600;
+  margin: 0 8rpx;
+}
+.continue-type-in{
+  background: #FFA600;
+  width: 670rpx;
+  height: 88rpx;
+  margin: 360rpx auto 0;
+  box-shadow: 0 12rpx 32rpx -16rpx #FFA600;
+  border-radius: 44rpx;
+  text-align:center;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 88rpx;
+}
+.finish-type-in{
+  border: 1px solid #FFA600;
+  width: 670rpx;
+  height: 88rpx;
+  margin: 40rpx auto 0;
+  border-radius: 44px;
+   text-align:center;
+  font-size: 36rpx;
+  color: #FFA600;
+  line-height: 88rpx;
+}
