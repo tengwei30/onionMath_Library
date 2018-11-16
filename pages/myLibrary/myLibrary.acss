@@ -22,3 +22,36 @@ page {
   color: #3E455B;
   line-height: 36rpx;
 }
+.book-item{
+  margin: 56rpx 40rpx 0;
+  display: flex;
+}
+.book-image{
+  width: 152rpx;
+  height: 202rpx;
+  display: inherit;
+  border-radius: 8rpx;
+}
+.book-text-container{
+  margin-left: 29rpx;
+}
+.book-name{
+  font-size: 28rpx;
+  color: #2F3337;
+  line-height: 40rpx;
+}
+.book-author{
+  font-size: 24rpx;
+  color: #848DA9;
+  line-height: 24rpx;
+  margin: 8rpx 0 32rpx;
+}
+.book-state{
+  border: 1rpx solid #848DA9;
+  padding: 0 12rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #FFA600;
+  line-height: 24rpx;
+  height: 40rpx;
+}

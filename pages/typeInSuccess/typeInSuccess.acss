@@ -43,7 +43,7 @@ page {
   line-height: 88rpx;
 }
 .finish-type-in{
-  border: 1px solid #FFA600;
+  border: 1rpx solid #FFA600;
   width: 670rpx;
   height: 88rpx;
   margin: 40rpx auto 0;
