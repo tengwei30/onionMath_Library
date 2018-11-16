@@ -1,0 +1,7 @@
+<view class="root-container">
+  <view class="tab-container">
+    <text class="tab {{ myBorrowSeleted ? 'tab-seleted' : 'tab-un-seleted' }}" onTap="seletedTab" data-selected="1">我的借阅</text>
+    <text class="tab {{ myReserveSeleted ? 'tab-seleted' : 'tab-un-seleted' }}" onTap="seletedTab"  data-selected="2">我的预订</text>
+    <text class="tab {{ myContributeSeleted ? 'tab-seleted' : 'tab-un-seleted' }}" onTap="seletedTab"  data-selected="3">我的贡献</text>    
+  </view>
+</view>

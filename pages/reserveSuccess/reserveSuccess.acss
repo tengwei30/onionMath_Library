@@ -1,0 +1,41 @@
+page {
+  background-color: #fff;
+}
+.root-container{
+  width: 100%;
+}
+.book-image{
+  margin: 124rpx auto 0;
+  width: 194rpx;
+  height: 264rpx;
+  display: inherit;
+  border-radius: 8rpx;
+}
+.reserve-success{
+  font-size: 40rpx;
+  color: #2F3337;
+  line-height: 40rpx;
+  text-align: center;
+  margin: 64rpx auto 0;
+}
+.counting-container{
+  margin: 24rpx auto 0;
+  text-align: center;
+  font-size: 32rpx;
+  color: #2F3337;
+  line-height: 44rpx;
+}
+.hight-light{
+  color: #FFA601;
+}
+.finish-type-in{
+  border: 1px solid #FFA600;
+  width: 670rpx;
+  height: 88rpx;
+  margin: 454rpx auto 0;
+  border-radius: 44px;
+   text-align:center;
+  font-size: 36rpx;
+  color: #FFA600;
+  line-height: 88rpx;
+}
