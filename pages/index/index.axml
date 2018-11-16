@@ -1,3 +1,23 @@
-<view>
-  this is a blank page
+<view class="home">
+  <view class="title">洋葱图书馆</view>
+  <view class="desc">即刻，发现，新认知</view>
+  <view class="figure">
+    <view class="figure__img">
+      <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+    </view>
+    <view class="figure__img">
+      <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+    </view>
+    <view class="figure__img">
+      <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+    </view>
+    <view class="footer__scan">
+      <image
+        class="scan__img"
+        src="../../assets/donate.png"
+        mode="scaleToFill"
+        onTap="gotoScan"
+      />
+    </view>
+  </view>
 </view>
