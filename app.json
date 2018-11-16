@@ -5,10 +5,12 @@
     "pages/bookdetail/index",
     "pages/scanResult/scanResult",
     "pages/typeInManual/typeInManual",
+    "pages/reserveSuccess/reserveSuccess",
+    "pages/myLibrary/myLibrary",
     "pages/typeInSuccess/typeInSuccess",
     "pages/borrowSuccess/borrowSuccess",
     "pages/onionBooks/onionBooks"
-    
+
   ],
   "window": {
     "defaultTitle": "洋葱图书馆"

@@ -1,0 +1,24 @@
+page {
+  background-color: #fff;
+}
+.root-container{
+  width: 100%;
+}
+.tab-container{
+  margin: 44rpx 8rpx 0;
+  display: flex;
+  align-items: flex-end;
+}
+.tab{
+  margin-left: 32rpx;
+}
+.tab-seleted{
+  font-size: 48rpx;
+  color: #FFA600;
+  line-height: 48rpx;
+}
+.tab-un-seleted{
+  font-size: 36rpx;
+  color: #3E455B;
+  line-height: 36rpx;
+}

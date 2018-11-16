@@ -1,3 +1,6 @@
+let app = getApp()
+let addBookApiUrl = app.globalData.baseUrl
+
 Page({
   data: {
     bookReview:""

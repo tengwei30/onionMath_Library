@@ -1,0 +1,11 @@
+<view class="root-container">
+  <image class="book-image" mode="aspectFill" src="{{bookPicUrl}}" />
+  <view class="reserve-success">预订成功</view>
+  <view class="counting-container">
+    <view>
+      <text class="count-time">请在<text class="hight-light">{{leftMinute}}</text>分<text class="hight-light">{{leftSecond}}</text>秒内</text>
+    </view>
+     <text class="classname">到<text class="hight-light">{{towerNumber}}</text>号楼 <text class="hight-light">{{floorNumber}}</text>层 <text>{{东南角}}</text> <text class="hight-light">{{shelfPosition}}</text>领取</text> 
+  </view>
+  <view class="finish-type-in" onTap="cancelReserve">取消预定</view>
+</view>
