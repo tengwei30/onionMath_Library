@@ -1,0 +1,58 @@
+.onionBooks {
+  padding: 0 40rpx;
+}
+.onionBooks .search {
+  margin-bottom: 56rpx;
+  position: relative;
+}
+.onionBooks .search input {
+  width: 512rpx;
+  height: 72rpx;
+  padding-left: 32rpx;
+  margin-right: 38rpx;
+  background: #F9FAFC;
+  border-radius: 72rpx;
+  margin-top: 28rpx;
+}
+.onionBooks .search .btn {
+  font-size: 34rpx;
+  color: #FFA600;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.book__lists .book__tabs text {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #3E455B;
+  line-height: 36rpx;
+  padding-right: 32rpx;
+}
+.book__lists .book__tabs .active {
+  font-family: PingFangSC-Semibold;
+  font-size: 48rpx;
+  color: #FFA600;
+  line-height: 48rpx;
+}
+.lists__tab {
+  margin-top: 48rpx;
+}
+.lists__tab .book__figure {
+  width: 186rpx;
+  float: left;
+  margin-right: 56rpx;
+  margin-bottom: 72rpx; 
+}
+.lists__tab .book__figure:nth-of-type(3n+3) {
+  margin-right: 0;
+}
+.lists__tab .book__figure .img {
+  width: 186rpx;
+  height: 252rpx;
+  border-radius: 4rpx;
+}
+.lists__tab .book__figure .title {
+  width: 186rpx;
+  text-align: center;
+}
+

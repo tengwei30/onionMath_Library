@@ -1,0 +1,26 @@
+<view class="onionBooks">
+  <view class="search">
+    <input type="text" placeholder="如何怼产品经理" auto-focus />
+    <text class="btn">搜索</text>
+  </view>
+  <view class="book__lists">
+    <view class="book__tabs">
+      <text class="{{ isActive ? 'active' : ''}}">热门</text>
+      <text class="{{ !isActive ? 'active' : ''}}">上新</text>
+    </view>
+    <view class="lists__tab">
+      <view class="book__figure">
+        <image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" mode="scaleToFill" />
+        <view class="title">漫长的告别</view>
+      </view>
+      <view class="book__figure">
+        <image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" mode="scaleToFill" />
+        <view class="title">漫长的告别</view>
+      </view>
+      <view class="book__figure">
+        <image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" mode="scaleToFill" />
+        <view class="title">漫长的告别</view>
+      </view>
+    </view>
+  </view>
+</view>

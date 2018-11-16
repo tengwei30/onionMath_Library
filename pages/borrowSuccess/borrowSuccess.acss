@@ -1,0 +1,27 @@
+.borrow__success {
+  width: 100%;
+  max-height: 100%;
+}
+.borrow__success .image__success {
+  width: 294rpx;
+  height: 264rpx;
+  padding: 134rpx 0 64rpx 278rpx;
+}
+.borrow__success .text__success {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #2F3337;
+  line-height: 1;
+  text-align: center
+}
+.borrow__success .text__info {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #848DA9;
+  line-height: 1;
+  text-align: center;
+  padding-top: 12rpx;
+}
+.borrow__success .text__info .book__number {
+  color: #000001
+}

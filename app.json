@@ -1,10 +1,13 @@
 {
   "pages": [
-    "pages/bookReview/bookReview",
-    "pages/scanResult/scanResult",
     "pages/index/index",
+    "pages/bookReview/bookReview",
+    "pages/bookdetail/index",
+    "pages/scanResult/scanResult",
     "pages/typeInManual/typeInManual",
-    "pages/typeInSuccess/typeInSuccess"
+    "pages/typeInSuccess/typeInSuccess",
+    "pages/borrowSuccess/borrowSuccess",
+    "pages/onionBooks/onionBooks"
     
   ],
   "window": {
