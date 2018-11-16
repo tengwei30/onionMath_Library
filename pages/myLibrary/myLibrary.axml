@@ -4,4 +4,14 @@
     <text class="tab {{ myReserveSeleted ? 'tab-seleted' : 'tab-un-seleted' }}" onTap="seletedTab"  data-selected="2">我的预订</text>
     <text class="tab {{ myContributeSeleted ? 'tab-seleted' : 'tab-un-seleted' }}" onTap="seletedTab"  data-selected="3">我的贡献</text>    
   </view>
+  <view class="book-list" a:for="{{bookList}}" a:for-item="bookItem">
+    <view class="book-item">
+      <image class="book-image" mode="aspectFill" src="{{bookItem.bookPicUrl}}" />
+      <view class="book-text-container">
+        <view class="book-name">{{bookItem.bookName}}</view>
+        <view class="book-author">{{bookItem.bookAuthor}}</view>
+        <text class="book-state">{{bookItem.state}}</text>
+      </view>
+    </view>
+  </view>
 </view>
