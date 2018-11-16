@@ -1,3 +1,6 @@
+import config from '../../config/index.js';
+import { ddPromise } from '../../config/utils.js';
+
 Page({
   onLoad(query) {
     // 页面加载
@@ -7,12 +10,22 @@ Page({
     // 页面加载完成
   },
   gotoScan (ev) {
-    console.log(ev)
     dd.scan({
       type: 'qr',
       success: (res) => {
-        console.log('res', res)
-        dd.alert({ title: res.code });
+        const isbn = res.code
+        ddPromise(dd.httpRequest)({
+          url: `${config.domain.common}/book/auto`,
+          method: 'POST',
+          data: { isbn }
+        }).then(res => {
+          console.log('scan', res)
+          dd.navigateTo({
+            url: `/pages/bookdetail/index?isbn=${isbn}&type=borrow`
+          })
+        }).catch(err => {
+          dd.alert({content: err})
+        })
       },
     })
   },
