@@ -10,6 +10,7 @@
   height: 72rpx;
   padding-left: 32rpx;
   margin-right: 38rpx;
+  font-size: 28rpx;
   background: #F9FAFC;
   border-radius: 72rpx;
   margin-top: 28rpx;

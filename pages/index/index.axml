@@ -6,10 +6,10 @@
       <image onTap="gotoBooks" class="img" src="../../assets/home_ic_library.png" mode="scaleToFill" />
     </view>
     <view class="figure__img">
-      <image class="img" src="../../assets/home_ic_mine.png" mode="scaleToFill" />
+      <image onTap="gotoMyLibrary" class="img" src="../../assets/home_ic_mine.png" mode="scaleToFill" />
     </view>
     <view class="figure__img">
-      <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+      <image onTap="scanBook" class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
     </view>
     <view class="footer__scan">
       <image

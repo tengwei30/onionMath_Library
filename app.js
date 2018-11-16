@@ -13,7 +13,6 @@ App({
           method: 'POST',
           data: { code }
         }).then(res => {
-          console.log(res)
           this.globalData.userInfo = res.data
         }).catch(err => {
           console.error('error ---> ', err)
@@ -25,11 +24,13 @@ App({
     })
   },
   onLoad () {
+    console.log(1)
     
   },
   onShow(options) {
     // 从后台被 scheme 重新打开
     // options.query == {number:1}
+    console.log(2)
   },
   globalData: {
     baseUrl: "http://httpbin.org/post",

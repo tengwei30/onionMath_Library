@@ -5,8 +5,8 @@
   </view>
   <view class="book__lists">
     <view class="book__tabs">
-      <text class="{{ isActive ? 'active' : ''}}">热门</text>
-      <text class="{{ !isActive ? 'active' : ''}}">上新</text>
+      <text onTap="tabClick" data-type="hot" class="{{ isActive === '0' ? 'active' : ''}}">热门</text>
+      <text onTap="tabClick" data-type="new" class="{{ isActive === '1' ? 'active' : ''}}">上新</text>
     </view>
     <view class="lists__tab">
       <view class="book__figure">

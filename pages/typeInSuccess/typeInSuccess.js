@@ -1,5 +1,7 @@
 let app = getApp()
 let addBookApiUrl = app.globalData.baseUrl
+import config from '../../config/index.js';
+import { ddPromise } from '../../config/utils.js';
 
 Page({
   data: {
@@ -10,8 +12,26 @@ Page({
     this.loadPageInfo();
   },
   continueTypeIn() {
-    dd.redirectTo({
-      url: 'new_page?count=100'
+    dd.scan({
+      type: 'qr',
+      success: (res) => {
+        const isbn = res.code
+        ddPromise(dd.httpRequest)({
+          url: `${config.domain.common}/book/auto`,
+          method: 'POST',
+          data: { isbn }
+        }).then(res => {
+          console.log('scan', res)
+          dd.navigateTo({
+            url: `/pages/bookdetail/index?isbn=${isbn}&type=offer`
+          })
+        }).catch(err => {
+          dd.alert({ content: err })
+          dd.navigateTo({
+            url: '/pages/typeInManual/typeInManual'
+          })
+        })
+      },
     })
   },
   finishTypeIn() {
