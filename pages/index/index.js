@@ -6,29 +6,21 @@ Page({
   onReady() {
     // 页面加载完成
   },
-  onShow() {
-    // 页面显示
-  },
-  onHide() {
-    // 页面隐藏
-  },
-  onUnload() {
-    // 页面被关闭
-  },
-  onTitleClick() {
-    // 标题被点击
-  },
-  onPullDownRefresh() {
-    // 页面被下拉
-  },
-  onReachBottom() {
-    // 页面被拉到底部
+  gotoScan (ev) {
+    console.log(ev)
+    dd.scan({
+      type: 'qr',
+      success: (res) => {
+        console.log('res', res)
+        dd.alert({ title: res.code });
+      },
+    })
   },
   onShareAppMessage() {
     // 返回自定义分享信息
     return {
-      title: 'My App',
-      desc: 'My App description',
+      title: '洋葱图书馆',
+      desc: '洋葱图书馆',
       path: 'pages/index/index',
     };
   },

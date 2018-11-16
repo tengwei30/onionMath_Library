@@ -1,0 +1,19 @@
+<view class="book__detail">
+  <view>
+    <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+    <text>白金数据</text>
+    <text>东野圭吾</text>
+    <text>本书由某光年捐赠</text>
+    <text>日本推理天王东野圭吾全新烧脑巨献！ “日本奥斯卡”影帝二宫和也主演同名电影！ 我是犯罪专家，也是凶手；我在逃亡，也在寻找真相。 </text>
+  </view>
+  <view>
+    <text>超级棒！读的特别爽！上一次有这种阅读体验的好像还是很久之前的《孤岛之鬼》。本来以为是自由与监控的较量，结果是阶层的故事。</text>
+    <text>——某光年</text>
+  </view>
+  <view>
+    <view>
+      此书位于 <text>5</text>号楼 <text>2</text>层 东南角 <text>B2</text>格
+    </view>
+    <button>我要借走</button>
+  </view>
+</view>

@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/bookdetail/index"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "洋葱图书馆"
   }
 }
