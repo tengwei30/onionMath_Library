@@ -16,6 +16,11 @@ Page({
       },
     })
   },
+  gotoBooks (ev) {  // 跳转到图书库
+    dd.navigateTo({
+      url: '/pages/onionBooks/onionBooks'
+    })
+  },
   onShareAppMessage() {
     // 返回自定义分享信息
     return {

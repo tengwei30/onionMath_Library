@@ -3,10 +3,10 @@
   <view class="desc">即刻，发现，新认知</view>
   <view class="figure">
     <view class="figure__img">
-      <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+      <image onTap="gotoBooks" class="img" src="../../assets/home_ic_library.png" mode="scaleToFill" />
     </view>
     <view class="figure__img">
-      <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />
+      <image class="img" src="../../assets/home_ic_mine.png" mode="scaleToFill" />
     </view>
     <view class="figure__img">
       <image class="img" src="../../assets/home_ic_donate.png" mode="scaleToFill" />

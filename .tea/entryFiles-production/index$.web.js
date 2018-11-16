@@ -1,0 +1,10 @@
+require('@alipay/appx-compiler/lib/sjsEnvInit');
+require('./config$');
+require('../../pages/index/index');
+require('../../pages/bookReview/bookReview');
+require('../../pages/bookdetail/index');
+require('../../pages/scanResult/scanResult');
+require('../../pages/typeInManual/typeInManual');
+require('../../pages/typeInSuccess/typeInSuccess');
+require('../../pages/borrowSuccess/borrowSuccess');
+require('../../pages/onionBooks/onionBooks');
