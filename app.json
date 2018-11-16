@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/bookReview/bookReview",
+    "pages/scanResult/scanResult",
     "pages/index/index",
     "pages/typeInManual/typeInManual",
     "pages/typeInSuccess/typeInSuccess"
+    
   ],
   "window": {
     "defaultTitle": "My App"

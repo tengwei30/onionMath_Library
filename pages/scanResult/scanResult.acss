@@ -1,0 +1,81 @@
+page {
+  background-color: #fff;
+}
+.root-container{
+  width: 100%;
+}
+.book-image{
+  margin: 44rpx auto 0;
+  width: 194rpx;
+  height: 264rpx;
+  display: inherit;
+  border-radius: 8rpx;
+}
+.book-name{
+  font-size: 40rpx;
+  color: #2F3337;
+  margin: 48rpx auto 0;
+  text-align: center;
+}
+.book-author{
+  font-size: 30rpx;
+  
+  color: #848DA9;
+  margin: 16rpx auto 0;
+  text-align: center;
+}
+.book-intro-container{
+  width: 670rpx;
+  height: 168rpx;
+  margin: 48rpx auto 0;
+}
+.book-intro{
+  width: 100%;
+  font-size: 28rpx;
+  color: #545867;
+  text-align: justify;
+  line-height: 42rpx;
+}
+.book-review-container{
+  width: 670rpx;
+  height: 194rpx;
+  background: #F9FAFC;
+  border-radius: 12rpx;
+  margin: 64rpx auto 0;
+  padding: 24rpx;
+}
+.flex-container{
+  display: flex;
+}
+
+.quotation-mark{
+  font-size: 64rpx;
+  color: #848DA9;
+  text-align: justify;
+  line-height: 64rpx;
+}
+.book-review{
+  max-height: 120rpx;
+  font-size: 26rpx;
+  color: #848DA9;
+  line-height: 40rpx;
+  flex-grow:1;
+}
+.book-review-author{
+  font-size: 26rpx;
+  color: #848DA9;
+  text-align: right;
+  line-height: 26rpx;
+}
+.add-book-container{
+  background: #FFA600;
+  width: 670rpx;
+  height: 88rpx;
+  margin: 142rpx auto 0;
+  box-shadow: 0 12rpx 32rpx -16rpx #FFA600;
+  border-radius: 44rpx;
+  text-align:center;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 88rpx;
+}

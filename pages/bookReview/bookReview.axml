@@ -1,0 +1,7 @@
+<view class="root-container">
+  <view class="group-container">
+    <view class="title">请填写评论</view>
+    <textarea class="input-text-area" placeholder="" onInput="onBookIntroInput" maxlength="240"/>
+  </view>
+  <view class="add-book-container" onTap="reviewBook">确认</view>
+</view>
