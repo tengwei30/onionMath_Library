@@ -1,0 +1,36 @@
+page {
+  background-color: #fff;
+}
+.root-container{
+  width: 100%;
+}
+.group-container {
+  margin: 40rpx auto;
+  width: 670rpx;
+  padding-bottom: 25rpx;
+}
+.title{
+  margin-top: 40rpx;
+  font-size: 40rpx;
+  color: #3E455B;
+}
+.input-text-area{
+  background: #F9FAFC;
+  border-radius: 16rpx;
+  margin:40rpx auto 0;
+}
+.book-name-input{
+  height: 160rpx;
+}
+.add-book-container{
+  background: #FFA600;
+  width: 670rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  box-shadow: 0 12rpx 32rpx -16rpx #FFA600;
+  border-radius: 44rpx;
+  text-align:center;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 88rpx;
+}

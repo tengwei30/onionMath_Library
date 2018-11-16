@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/bookdetail/index"
+    "pages/typeInManual/typeInManual",
+    "pages/typeInSuccess/typeInSuccess"
   ],
   "window": {
     "defaultTitle": "洋葱图书馆"

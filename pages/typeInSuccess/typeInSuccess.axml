@@ -1,0 +1,12 @@
+<view class="root-container">
+   <image class="book-image" mode="aspectFill" src="{{bookPicUrl}}" />
+   <text class="onion-library">洋葱图书馆</text>
+   <view class="book-count-container">
+     <text class="count-text">第</text>
+     <text class="count-text count-number">{{allBookCount}}</text>
+     <text class="count-text">本书</text>
+   </view>
+   <view class="continue-type-in" onTap="continueTypeIn">继续录入</view>
+   <view class="finish-type-in" onTap="finishTypeIn">完成录入</view>
+   
+</view>

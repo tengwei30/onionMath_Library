@@ -1,0 +1,16 @@
+<view class="root-container">
+  <view class="group-container">
+    <view class="title">请填写书名</view>
+    <textarea class="input-text-area book-name-input" placeholder=""  onInput="onBookNameInput" maxlength="-1" />
+  </view>
+  <view class="group-container">
+    <view class="title">请填写作者名称</view>
+    <textarea class="input-text-area book-name-input" placeholder="" onInput="onAuthorNameInput" maxlength="-1"/>
+  </view>
+  <view class="group-container">
+    <view class="title">请填写书籍简介</view>
+    <textarea class="input-text-area book-name-input" placeholder="" onInput="onBookIntroInput" maxlength="240"/>
+  </view>
+  <view class="add-book-container" onTap="addBook">加入洋葱书库</view>
+  
+</view>
