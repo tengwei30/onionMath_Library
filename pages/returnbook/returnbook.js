@@ -9,10 +9,12 @@ Page({
   },
   onLoad (options) {
     const { userId, onionId } = options
+    console.log(options)
     this.setData({ userId, onionId })
     this.getBookDetail()
   },
   returnBook () {
+    const { onionId, userId } = this.data
     dd.scan({
       type: 'qr',
       success: (res) => {
@@ -26,12 +28,16 @@ Page({
             position
           }
         }).then(res => {
-          dd.alert({ content: '还书成功' })
-          sertTimeOut(() => {
-            dd.navigateTo({
-              url: 'pages/index/index'
-            })
-          }, 2500)
+          dd.showToast({
+            type: 'success',
+            content: '还书成功',
+            duration: 3000,
+            success: () => {
+              dd.navigateBack({
+                delta: 2
+              })
+            },
+          });
         }).catch(err => {
           console.error('error ---> ', err)
         })

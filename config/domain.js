@@ -1,7 +1,7 @@
 
 const domainConfig = {
   dev: {
-    common: 'http://10.8.12.158:7001'
+    common: 'http://10.8.8.8:8188'
   },
   prod: {
     common: 'https://api-v5-0.yangcong345.com'

@@ -13,9 +13,14 @@ Page({
     myContributeSeleted: false,
     seletedIndex: TAB_MY_BORROW,
     myLibraryData:{},
-    bookList: []
+    bookList: [],
+    userId: ''
   },
   onLoad() {
+    let userInfo = dd.getStorageSync({ key: 'userInfo' })
+    this.setData({
+      userId: userInfo.data.id
+    })
     this.getMyLibraryData()
   },
   onUnload() {
@@ -67,7 +72,7 @@ Page({
     })
   },
   counttingTime() {
-    this.bookList.forEach(bookItem => {
+    this.data.bookList.forEach(bookItem => {
       let leftTotal = parseInt(new Date(bookItem.invalidTime).getTime() / 60)
       var _this = this
       let timer = setInterval(function() {
@@ -86,11 +91,11 @@ Page({
     });
   },
   tapBookItem:function(res) {
-    console.log(res.target.dataset.bookItem)
-    if (this.data.myBorrowSeleted){
-      let userId =  app.globalData.userInfo.id
+    console.log('my', this.data.userId)
+    const { userId, myBorrowSeleted } = this.data
+    if (myBorrowSeleted){
       dd.navigateTo({
-        url: `/pages/returnbook/returnbook?onionId=${e.target.dataset.bookItem.onionId}&userId=${userId}`
+        url: `/pages/returnbook/returnbook?onionId=${res.target.dataset.bookItem.onionId}&userId=${userId}`
       })
     }
   }

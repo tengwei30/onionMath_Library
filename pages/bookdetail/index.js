@@ -55,7 +55,7 @@ Page({
       //     userId
       //   }
       // }).then(res => {
-        dd.navigateTo({
+        dd.redirect({
           url: `/pages/borrowSuccess/borrowSuccess?onionId=${onionId}&userId=${userId}`
         })
       // }).catch(err => {
