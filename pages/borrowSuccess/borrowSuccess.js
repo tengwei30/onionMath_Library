@@ -4,7 +4,8 @@ import { ddPromise } from '../../config/utils.js';
 Page({
   data: {
     coverImg: '',
-    count: ''
+    count: '',
+    canBorrow: true
   },
   onLoad(options) {
     const { userId, onionId } = options
@@ -16,10 +17,17 @@ Page({
         onionId
       }
     }).then(res => {
-      this.setData({
-        coverImg: res.data.coverImg,
-        count: res.data.history.length
-      })
+      if (res.data.canBorrow) {
+        this.setData({
+          coverImg: res.data.coverImg,
+          count: res.data.history.length
+        })
+      } else {
+        this.setData({
+          coverImg: res.data.coverImg,
+          canBorrow: false
+        })
+      }
     })
   }
 });

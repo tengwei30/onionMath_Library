@@ -10,11 +10,11 @@
   border-radius: 8rpx;
   margin-bottom: 64rpx;
 }
-.borrow__success .image__success {
+/* .borrow__success .image__success {
   width: 294rpx;
   height: 264rpx;
   padding: 134rpx 0 64rpx 278rpx;
-}
+} */
 .borrow__success .text__success {
   font-family: PingFangSC-Medium;
   font-size: 40rpx;
@@ -32,4 +32,7 @@
 }
 .borrow__success .text__info .book__number {
   color: #000001
+}
+isShow {
+  display: block;
 }

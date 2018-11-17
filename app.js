@@ -31,13 +31,18 @@ App({
     })
   },
   onLoad () {
-    console.log(1)
-    
+    let userInfo = dd.getStorageSync({ key: 'userInfo' })
+    if (this.globalData.userInfo === {}) {
+      this.globalData.userInfo = userInfo
+    }
   },
   onShow(options) {
     // 从后台被 scheme 重新打开
     // options.query == {number:1}
-    console.log(2)
+    let userInfo = dd.getStorageSync({ key: 'userInfo' })
+    if (this.globalData.userInfo === {}) {
+      this.globalData.userInfo = userInfo
+    }
   },
   globalData: {
     baseUrl: "http://httpbin.org/post",
