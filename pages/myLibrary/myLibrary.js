@@ -36,11 +36,12 @@ Page({
       })
     } else if (seletedIndex == TAB_MY_RESERVE){
       this.setData({
-        bookList: myLibraryData.borrowing
+        bookList: myLibraryData.order
       })
+      this.counttingTime()
     } else if (seletedIndex == TAB_MY_CONTRIBUTE){
       this.setData({
-        bookList: myLibraryData.borrowing
+        bookList: myLibraryData.contribute
       })
     }
   },
@@ -54,7 +55,8 @@ Page({
       dd.hideLoading();
       console.log('scan', res)
       _this.setData({
-        myLibraryData : res.data
+        myLibraryData : res.data,
+        bookList: res.data.borrowing
       })
     }).catch(err => {
       dd.hideLoading();
@@ -66,18 +68,16 @@ Page({
   },
   counttingTime() {
     this.bookList.forEach(bookItem => {
-      let leftMinute = this.data.leftMinute
-      let leftSecond = this.data.leftSecond
-      let totalSecond = leftMinute * 60 + leftSecond
+      let leftTotal = parseInt(new Date(bookItem.invalidTime).getTime() / 60)
       var _this = this
       let timer = setInterval(function() {
-        totalSecond--
-        if (totalSecond < 0) {
+        leftTotal--
+        if (leftTotal < 0) {
           clearInterval()
           return
         }
-        let leftSecond = totalSecond % 60
-        let leftMinute = parseInt(totalSecond / 60)
+        let leftSecond = leftTotal % 60
+        let leftMinute = parseInt(leftTotal / 60)
         _this.setData({
           leftMinute: leftMinute,
           leftSecond: leftSecond
@@ -85,5 +85,12 @@ Page({
       }, 1000);
     });
   },
-
+  tapBookItem:function(res) {
+    console.log(res.target.dataset.bookItem)
+    if (this.data.myBorrowSeleted){
+      dd.navigateTo({
+        url: `/pages/returnbook/returnbook?onionId=${e.target.dataset.bookItem.onionId}`
+      })
+    }
+  }
 });
