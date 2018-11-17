@@ -8,6 +8,7 @@ Page({
     bookdetail: {}
   },
   onLoad (options) {
+    console.log(options)
     const { userId, onionId } = options
     console.log(options)
     this.setData({ userId, onionId })
