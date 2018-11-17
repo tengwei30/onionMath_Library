@@ -14,7 +14,9 @@ Page({
     seletedIndex: TAB_MY_BORROW,
     myLibraryData:{},
     bookList: [],
-    userId: ''
+    userId: '',
+    leftMinute: 30,
+    leftSecond: 0
   },
   onLoad() {
     let userInfo = dd.getStorageSync({ key: 'userInfo' })
@@ -73,7 +75,7 @@ Page({
   },
   counttingTime() {
     this.data.bookList.forEach(bookItem => {
-      let leftTotal = parseInt(new Date(bookItem.invalidTime).getTime() / 60)
+      let leftTotal = parseInt((new Date(bookItem.invalidTime).getTime() - new Date().getTime()) / 1000)
       var _this = this
       let timer = setInterval(function() {
         leftTotal--
@@ -83,6 +85,7 @@ Page({
         }
         let leftSecond = leftTotal % 60
         let leftMinute = parseInt(leftTotal / 60)
+        console.log(`leftMinute = ${leftMinute} ,leftSecond = ${leftSecond}`)
         _this.setData({
           leftMinute: leftMinute,
           leftSecond: leftSecond
