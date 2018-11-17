@@ -14,6 +14,6 @@
     </view>
     <view class="book-review-author">——{{bookdetail.comments[0].from}}</view>
   </view>
-  <view class="book-position" style="magin-top:{{ showComment ? '58rpx' : '314rpx'}}">此书位于 5号楼 2层 东南角 B2格</view>
+  <view class="book-position" style="magin-top:{{ showComment ? '58rpx' : '314rpx'}}">{{bookdetail.position}}</view>
   <view class="add-book-container" onTap="orderBook">我要预定</view>
 </view>

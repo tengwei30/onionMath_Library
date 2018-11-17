@@ -88,8 +88,9 @@ Page({
   tapBookItem:function(res) {
     console.log(res.target.dataset.bookItem)
     if (this.data.myBorrowSeleted){
+      let userId =  app.globalData.userInfo.id
       dd.navigateTo({
-        url: `/pages/returnbook/returnbook?onionId=${e.target.dataset.bookItem.onionId}`
+        url: `/pages/returnbook/returnbook?onionId=${e.target.dataset.bookItem.onionId}&userId=${userId}`
       })
     }
   }
