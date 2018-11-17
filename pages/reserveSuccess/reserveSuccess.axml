@@ -5,7 +5,7 @@
     <view>
       <text class="count-time">请在<text class="height-light">{{leftMinute}}</text>分<text class="height-light">{{leftSecond}}</text>秒内</text>
     </view>
-     <text class="classname">到<text class="height-light">{{towerNumber}}</text>号楼 <text class="height-light">{{floorNumber}}</text>层 <text>{{东南角}}</text> <text class="height-light">{{shelfPosition}}</text>领取</text>
+     <text class="classname">到{{position}}领取</text>
   </view>
   <view class="finish-type-in" onTap="cancelReserve">取消预定</view>
 </view>

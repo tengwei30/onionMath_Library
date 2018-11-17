@@ -35,5 +35,11 @@ Page({
     }).catch(err => {
       console.error('error ----> ', err)
     })
+  },
+  toBookDetial:function(e) {
+    console.log(e.target.dataset.onionId)
+    dd.navigateTo({
+      url: `/pages/scanResult/scanResult?onionId=${e.target.dataset.onionId}`
+    })
   }
 });

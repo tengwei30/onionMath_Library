@@ -45,7 +45,6 @@ App({
     }
   },
   globalData: {
-    baseUrl: "http://httpbin.org/post",
     userInfo: {}
   }
 });
