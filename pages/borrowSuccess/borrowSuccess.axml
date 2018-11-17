@@ -5,8 +5,8 @@
       <view class="text__success">借阅成功</view>
       <view class="text__info">这是你借阅的第<text class="book__number">{{ count }}</text>本书</view>
     </view>
-    <view class="{{ !canBorrow ? 'isShow' : '' }}">
+    <!-- <view class="{{ !canBorrow ? 'isShow' : '' }}">
       <view class="text__success">此书已被预定</view>
-    </view>
+    </view> -->
   </view>
 </view>

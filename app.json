@@ -9,7 +9,8 @@
     "pages/myLibrary/myLibrary",
     "pages/typeInSuccess/typeInSuccess",
     "pages/borrowSuccess/borrowSuccess",
-    "pages/onionBooks/onionBooks"
+    "pages/onionBooks/onionBooks",
+    "pages/returnbook/returnbook"
 
   ],
   "window": {

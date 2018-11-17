@@ -1,0 +1,13 @@
+<view class="root-container">
+  <image class="book-image" mode="aspectFill" src="{{ bookdetail.coverImg }}" />
+  <view class="book-name">{{ bookdetail.name }}
+  </view>
+  <view class="book-author">{{bookdetail.author}}
+  </view>
+  <scroll-view class="book-intro-container" scroll-y="{{true}}" style="height: 168rpx;">
+    <view class="book-intro">{{bookdetail.summary}}
+    </view>
+  </scroll-view>
+  <view class="add-book-container" onTap="returnBook">我要还书
+  </view>
+</view>
