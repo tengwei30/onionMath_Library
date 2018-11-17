@@ -38,9 +38,14 @@ Page({
       })
     }
     if (type === 'offer') {
-      console.log(1111)
-      dd.navigateTo({
-        url: '/pages/typeInSuccess/typeInSuccess'
+      dd.scan({
+        type: 'qr',
+        success: (res) => {
+          console.log(res)
+          dd.navigateTo({
+            url: '/pages/typeInSuccess/typeInSuccess'
+          })
+        }
       })
     }
   }

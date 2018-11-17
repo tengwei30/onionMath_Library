@@ -74,8 +74,14 @@ page {
   margin: 142rpx auto 0;
   box-shadow: 0 12rpx 32rpx -16rpx #FFA600;
   border-radius: 44rpx;
-  text-align:center;
+  text-align: center;
   font-size: 36rpx;
   color: #FFFFFF;
   line-height: 88rpx;
+}
+.isShow {
+  display: block;
+}
+.isUnShow {
+  visibility: hidden;
 }

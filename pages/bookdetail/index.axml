@@ -1,5 +1,5 @@
 <view class="root-container">
-  <image class="book-image" mode="aspectFill" src="https://img1.doubanio.com/view/subject/m/public/s29471427.jpg" />
+  <image class="book-image" mode="aspectFill" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" />
   <view class="book-name">{{ bookdetail.name }}
   </view>
   <view class="book-author">{{bookdetail.author}}
@@ -8,7 +8,7 @@
     <view class="book-intro">{{bookdetail.summary}}
     </view>
   </scroll-view>
-  <view class="book-review-container">
+  <view class="book-review-container {{ type === 'borrow' ? 'isShow' : 'isUnShow' }} ">
     <view class="flex-container">
       <view class="quotation-mark">“
       </view>
@@ -18,6 +18,6 @@
     <view class="book-review-author">——{{bookReviewAuthor}}
     </view>
   </view>
-  <view class="add-book-container" onTap="addBook">{{ type === 'borrow' ? '我要借书' : (type === 'offer' ? '加入洋葱图书库' : '')  }}
+  <view class="add-book-container" onTap="addBook">{{ type === 'borrow' ? '我要借书' : (type === 'offer' ? '扫码加入洋葱图书库' : '')  }}
   </view>
 </view>
