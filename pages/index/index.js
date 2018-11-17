@@ -15,15 +15,8 @@ Page({
       type: 'qr',
       success: (res) => {
         const onionId = res.code
-        ddPromise(dd.httpRequest)({
-          url: `${config.domain.common}/book/${onionId}`,
-          method: 'GET'
-        }).then(res => {
-          dd.navigateTo({
-            url: `/pages/bookdetail/index?isbn=${isbn}&type=borrow`
-          })
-        }).catch(err => {
-          dd.alert({content: err})
+        dd.navigateTo({
+          url: `/pages/bookdetail/index?onionId=${onionId}&type=borrow&isbn=''`
         })
       },
     })
@@ -50,7 +43,7 @@ Page({
         }).then(res => {
           if (res.data.find) {
             dd.navigateTo({
-              url: `/pages/bookdetail/index?isbn=${isbn}&type=offer`
+              url: `/pages/bookdetail/index?isbn=${isbn}&type=offer&onionId=''`
             })
           } else {
             dd.navigateTo({

@@ -1,5 +1,25 @@
+import config from '../../config/index.js';
+import { ddPromise } from '../../config/utils.js';
+
 Page({
   data: {
+    coverImg: '',
+    count: ''
   },
-  onLoad() {}
+  onLoad(options) {
+    const { userId, onionId } = options
+    ddPromise(dd.httpRequest)({
+      url: `${config.domain.common}/book/borrow`,
+      method: 'POST',
+      data: {
+        userId,
+        onionId
+      }
+    }).then(res => {
+      this.setData({
+        coverImg: res.data.coverImg,
+        count: res.data.history.length
+      })
+    })
+  }
 });

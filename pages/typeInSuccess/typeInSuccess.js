@@ -1,15 +1,36 @@
 let app = getApp()
-let addBookApiUrl = app.globalData.baseUrl
 import config from '../../config/index.js';
 import { ddPromise } from '../../config/utils.js';
 
 Page({
   data: {
-    bookPicUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg",
-    allBookCount: 1234,
+    coverImg: "",
+    count: 0,
+    onionId: '',
+    isbn: '',
+    userId: ''
   },
-  onLoad() {
-    this.loadPageInfo();
+  onLoad(options) {
+    console.log(options)
+    const { isbn, onionId, userId } = options
+    ddPromise(dd.httpRequest)({
+      url: `${config.domain.common}/bind/onionId`,
+      method: 'POST',
+      data: {
+        isbn,
+        onionId,
+        userId
+      }
+    }).then(res => {
+      console.log(res)
+      const { count, coverImg } = res.data
+      this.setData({
+        count,
+        coverImg
+      })
+    }).catch(err => {
+      console.error('error ---> ', err)
+    })
   },
   continueTypeIn() {
     dd.scan({
@@ -38,33 +59,5 @@ Page({
     dd.navigateTo({
       url: '/pages/index/index'
     })
-  },
-  loadPageInfo() {
-    dd.showLoading();
-    dd.httpRequest({
-      url: addBookApiUrl,
-      method: 'POST',
-      data: {
-        bookName: this.data.bookName,
-        author: this.data.author,
-        bookIntro: this.bookIntro
-      },
-      dataType: 'json',
-      success: function(res) {
-        dd.showToast({
-          type: 'none',
-          content: '图书录入成功',
-        });
-      },
-      fail: function(res) {
-        dd.showToast({
-          type: 'none',
-          content: '图书添加失败',
-        });
-      },
-      complete: function(res) {
-        dd.hideLoading();
-      }
-    });
   }
 });

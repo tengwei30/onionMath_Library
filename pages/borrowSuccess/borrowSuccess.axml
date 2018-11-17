@@ -1,10 +1,7 @@
 <view class="borrow__success">
   <view>
-    <view class="image__success">
-      <image src="https://img1.doubanio.com/view/subject/m/public/s29471427.jpg" mode="scaleToFill" />
-    </view>
+    <image class="book-image" mode="aspectFill" src="{{coverImg}}" />
     <view class="text__success">借阅成功</view>
-    <view class="text__info">这是你借阅的第<text class="book__number">88</text>本书</view>
+    <view class="text__info">这是你借阅的第<text class="book__number">{{ count }}</text>本书</view>
   </view>
-  
 </view>

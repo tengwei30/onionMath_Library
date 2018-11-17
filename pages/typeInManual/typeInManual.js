@@ -52,7 +52,7 @@ Page({
           "author": author,
           "publisher": "",
           "summary": bookIntro,
-          "coverImg": "",
+          "coverImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542456125632&di=bc033177e8038a5e5a9795c7a3ad3ccd&imgtype=0&src=http%3A%2F%2Fwww.reader8.cn%2Fuploadfile%2F2017%2F0722%2F20170722095740544.jpg",
           "isbn": ISBNName
         }
       }).then(res => {
@@ -74,7 +74,7 @@ Page({
       console.log('userInfo', userInfo)
       ddPromise(dd.httpRequest)({
         url: `${config.domain.common}/bind/onionId`,
-        method: 'PUT',
+        method: 'POST',
         data: {
           "onionId": onionId,
           "isbn": isbn,
