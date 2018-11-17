@@ -13,6 +13,13 @@ App({
           method: 'POST',
           data: { code }
         }).then(res => {
+          dd.setStorageSync({
+            key: 'userInfo',
+            data: res.data,
+            success: function() {
+              console.log('写入成功')
+            }
+          })
           this.globalData.userInfo = res.data
         }).catch(err => {
           console.error('error ---> ', err)
@@ -34,6 +41,6 @@ App({
   },
   globalData: {
     baseUrl: "http://httpbin.org/post",
-    userInfo: null
+    userInfo: {}
   }
 });

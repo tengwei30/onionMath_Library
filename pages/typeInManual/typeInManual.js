@@ -1,55 +1,92 @@
 let app = getApp()
-let addBookApiUrl = app.globalData.baseUrl
+// let userInfo = app.globalData.userInfo
+import config from '../../config/index.js';
+import { ddPromise } from '../../config/utils.js';
 
 Page({
     data: {
         bookName: "",
         author: "",
-        bookIntro: ""
+        bookIntro: "",
+        ISBNName: "",
+        userInfo: ''
     },
     onLoad() {
+      let data = dd.getStorageSync({ key: 'userInfo' })
+      this.setData({
+        userInfo: data.data
+      })
+    },
+    onReady () {   
     },
     onBookNameInput: function (e) {
-      console.log(e.detail.value)
       this.setData({
         bookName: e.detail.value
       })
     },
     onAuthorNameInput: function(e) {
-      console.log(e.detail.value)
       this.setData({
         author: e.detail.value
       })
     },
     onBookIntroInput: function(e) {
-      console.log(e.detail.value)
       this.setData({
         bookIntro: e.detail.value
       })
     },
+    onISBNNameInput: function(e) {
+      this.setData({
+        ISBNName: e.detail.value
+      })
+    },
     addBook() {
       if(!this.checkBookInfoComplete())
-        return;  
+      return;
       dd.showLoading();
-      dd.httpRequest({
-        url: addBookApiUrl,
+      const { bookName, author, bookIntro, ISBNName } = this.data
+      ddPromise(dd.httpRequest)({
+        url: `${config.domain.common}/book`,
         method: 'POST',
         data: {
-          bookName: this.data.bookName,
-          author: this.data.author,
-          bookIntro: this.bookIntro
-        },
-        dataType: 'json',
-        success: function(res) {
-          dd.alert({ content: '图书添加成功' });
-        },
-        fail: function(res) {
-          dd.alert({ content: '图书添加失败' });
-        },
-        complete: function(res) {
-          dd.hideLoading();
+          "name": bookName,
+          "author": author,
+          "publisher": "",
+          "summary": bookIntro,
+          "coverImg": "",
+          "isbn": ISBNName
         }
-      });
+      }).then(res => {
+        dd.hideLoading()
+        dd.scan({
+          type: 'qr',
+          success: (res) => {
+            const { code } = res.code
+            this.bindonionCode(code)
+          }
+        })
+      }).catch(err => {
+        dd.hideLoading()
+        console.error('error ---> ', err)
+      })
+    },
+    bindonionCode (onionId) {
+      const { userInfo, isbn } = this.data
+      console.log('userInfo', userInfo)
+      ddPromise(dd.httpRequest)({
+        url: `${config.domain.common}/bind/onionId`,
+        method: 'PUT',
+        data: {
+          "onionId": onionId,
+          "isbn": isbn,
+          "userId": userInfo.store.id
+        }
+      }).then(res => {
+        dd.navigateTo({
+          url: '/pages/typeInSuccess/typeInSuccess'
+        })
+      }).catch(err => {
+        console.error('error ---> ', err)
+      })
     },
     checkBookInfoComplete: function() {
       if (this.isEmpty(this.data.bookName)){
@@ -62,6 +99,10 @@ Page({
       }
       if (this.isEmpty(this.data.bookIntro)) {
         dd.alert({ content: '请填写书籍简介' });
+        return false
+      }
+      if (this.isEmpty(this.data.ISBNName)) {
+        dd.alert({ content: '请填写书籍ISBN码' });
         return false
       }
       return true

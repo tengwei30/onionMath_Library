@@ -9,18 +9,14 @@
       <text onTap="tabClick" data-type="new" class="{{ isActive === '1' ? 'active' : ''}}">上新</text>
     </view>
     <view class="lists__tab">
-      <view class="book__figure">
+      <view class="book__figure" a:for="{{ datalists }}" key="{{ item }}">
+        <image class="img" src="{{ item.coverImg }}" mode="scaleToFill" />
+        <view class="title">{{ item.name }}</view>
+      </view>
+      <!-- <view class="book__figure">
         <image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" mode="scaleToFill" />
         <view class="title">漫长的告别</view>
-      </view>
-      <view class="book__figure">
-        <image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" mode="scaleToFill" />
-        <view class="title">漫长的告别</view>
-      </view>
-      <view class="book__figure">
-        <image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg" mode="scaleToFill" />
-        <view class="title">漫长的告别</view>
-      </view>
+      </view> -->
     </view>
   </view>
 </view>

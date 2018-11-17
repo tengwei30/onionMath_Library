@@ -1,8 +1,15 @@
+import config from '../../config/index.js';
+import { ddPromise } from '../../config/utils.js';
+
 Page({
   data: {
-    isActive: '0'
+    isActive: '0',
+    datalists: [],
+    userInfo: {}
   },
-  onLoad() {},
+  onLoad() {
+    this.getAllbooks()
+  },
   tabClick (ev) { // tab 切换
     const { type } = ev.target.dataset
     if (type === 'hot') {
@@ -15,5 +22,18 @@ Page({
         isActive: '1'
       })
     }
+  },
+  getAllbooks () {
+    ddPromise(dd.httpRequest)({
+      url: `${config.domain.common}/book/use/books`,
+      method: 'GET',
+    }).then(res => {
+      console.log(res)
+      this.setData({
+        datalists: res.data
+      })
+    }).catch(err => {
+      console.error('error ----> ', err)
+    })
   }
 });
