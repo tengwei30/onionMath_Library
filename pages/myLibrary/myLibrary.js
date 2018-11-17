@@ -7,13 +7,20 @@ Page({
     myBorrowSeleted: false,
     myReserveSeleted: true,
     myContributeSeleted: false,
+    seletedIndex: TAB_MY_BORROW,
     bookList: [
       {
         bookName: "碟形世界:猫和少年魔笛手",
-        bookPicUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg",
+        bookPicUrl: "https://img1.doubanio.com/view/subject/m/public/s29471427.jpg",
         bookAuthor: "特里·普拉切特",
         state: "已借阅12天"
       },
+      {
+        bookName: "碟形世界:猫和少年魔笛手",
+        bookPicUrl: "https://img1.doubanio.com/view/subject/m/public/s29471427.jpg",
+        bookAuthor: "特里·普拉切特",
+        state: "已借阅12天"
+      }
     ]
   },
   onLoad() {
@@ -21,10 +28,12 @@ Page({
   },
   seletedTab: function(e) {
     let seletedIndex = e.target.dataset.selected
+    
     this.setData({
       myBorrowSeleted: seletedIndex == TAB_MY_BORROW,
       myReserveSeleted: seletedIndex == TAB_MY_RESERVE,
-      myContributeSeleted: seletedIndex == TAB_MY_CONTRIBUTE
+      myContributeSeleted: seletedIndex == TAB_MY_CONTRIBUTE,
+      seletedIndex: seletedIndex
     })
     switch(seletedIndex){
       case TAB_MY_BORROW:
