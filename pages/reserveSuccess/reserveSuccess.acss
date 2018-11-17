@@ -25,7 +25,7 @@ page {
   color: #2F3337;
   line-height: 44rpx;
 }
-.hight-light{
+.height-light{
   color: #FFA601;
 }
 .finish-type-in{

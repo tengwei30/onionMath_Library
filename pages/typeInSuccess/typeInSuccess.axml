@@ -6,6 +6,7 @@
      <text class="count-text count-number">{{allBookCount}}</text>
      <text class="count-text">本书</text>
    </view>
+   <view class="add-qr-code">请把扫描的二维码贴到书上</view>
    <view class="continue-type-in" onTap="continueTypeIn">继续录入</view>
    <view class="finish-type-in" onTap="finishTypeIn">完成录入</view>
    

@@ -10,8 +10,14 @@
       <view class="book-text-container">
         <view class="book-name">{{bookItem.bookName}}</view>
         <view class="book-author">{{bookItem.bookAuthor}}</view>
-        <text class="book-state">{{bookItem.state}}</text>
-      </view>
+        <text a:if="{{ myBorrowSeleted }}" class="book-tag {{ bookItem.isReturn ? 'book-tag-finash' : 'book-tag-usering' }}">{{bookItem.tag}}</text>
+        <view a:if="{{ myReserveSeleted }}" class="counting-container">
+          <view>
+            <text class="count-time">请在<text class="height-light">{{leftMinute}}</text>分<text class="height-light">{{leftSecond}}</text>秒内</text>
+          </view>
+          <view>
+             <text class="count-time">到<text class="height-light">{{towerNumber}}</text>号楼 <text class="height-light">{{floorNumber}}</text>层 <text>{{东南角}}</text><text class="height-light">{{shelfPosition}}</text>领取</text>
+          </view>
     </view>
   </view>
 </view>

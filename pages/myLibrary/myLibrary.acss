@@ -46,12 +46,28 @@ page {
   line-height: 24rpx;
   margin: 8rpx 0 32rpx;
 }
-.book-state{
-  border: 1rpx solid #848DA9;
+.book-tag{
   padding: 0 12rpx;
   border-radius: 20rpx;
   font-size: 24rpx;
-  color: #FFA600;
   line-height: 24rpx;
   height: 40rpx;
+}
+.book-tag-usering{
+  border: 1rpx solid #FFA600;
+  color: #FFA600;
+}
+.book-tag-finash{
+  border: 1rpx solid #848DA9;
+  color: #848DA9;
+}
+.counting-container{
+  margin-top: 24rpx;
+  text-align: left;
+  font-size: 24rpx;
+  color: #2F3337;
+  line-height: 32rpx;
+}
+.height-light{
+  color: #FFA601;
 }
