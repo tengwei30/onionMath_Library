@@ -71,11 +71,24 @@ page {
   background: #FFA600;
   width: 670rpx;
   height: 88rpx;
-  margin: 142rpx auto 0;
+  margin: 32rpx auto 0;
   box-shadow: 0 12rpx 32rpx -16rpx #FFA600;
   border-radius: 44rpx;
-  text-align:center;
+  text-align: center;
   font-size: 36rpx;
   color: #FFFFFF;
   line-height: 88rpx;
+}
+.isShow {
+  display: block;
+}
+.isUnShow {
+  visibility: hidden;
+}
+.book-position{
+  font-size: 28rpx;
+  color: #2F3337;
+  line-height: 28rpx;
+  text-align: center;
+  margin: 48rpx auto 0;
 }

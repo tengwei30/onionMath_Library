@@ -9,7 +9,7 @@
       <text onTap="tabClick" data-type="new" class="{{ isActive === '1' ? 'active' : ''}}">上新</text>
     </view>
     <view class="lists__tab">
-      <view class="book__figure" a:for="{{ datalists }}" key="{{ item }}">
+      <view class="book__figure" a:for="{{ datalists }}" key="{{ item }}" onTap="toBookDetial" data-onionId ={{item.onionId}}>
         <image class="img" src="{{ item.coverImg }}" mode="scaleToFill" />
         <view class="title">{{ item.name }}</view>
       </view>

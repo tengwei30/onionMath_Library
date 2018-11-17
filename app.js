@@ -40,7 +40,6 @@ App({
     console.log(2)
   },
   globalData: {
-    baseUrl: "http://httpbin.org/post",
     userInfo: {}
   }
 });

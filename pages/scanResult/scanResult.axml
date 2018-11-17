@@ -1,18 +1,19 @@
 <view class="root-container">
-  <image class="book-image" mode="aspectFill" src="{{bookPicUrl}}" />
-  <view class="book-name">{{bookName}}</view>
-  <view class="book-author">{{bookAuthor}}</view>
-  <scroll-view class="book-intro-container" scroll-y="{{true}}" style="height: 168rpx;">
-    <view class="book-intro">{{bookIntor}}</view>
-  </scroll-view>
-  <view class="book-review-container">
-    <view class="flex-container">
-      <view class="quotation-mark">“</view>
-      <view class="book-review">{{bookReview}}
-      </view>
-    </view>
-    <view class="book-review-author">——{{bookReviewAuthor}}</view>
+  <image class="book-image" mode="aspectFill" src="{{bookdetail.coverImg}}" />
+  <view class="book-name">{{ bookdetail.name }}</view>
+  <view class="book-author">{{bookdetail.author}}
   </view>
-  <view class="add-book-container" onTap="addBook">加入洋葱书库</view>
-  
+  <scroll-view class="book-intro-container" scroll-y="{{true}}" style="height: 168rpx;">
+    <view class="book-intro">{{bookdetail.summary}}
+    </view>
+  </scroll-view>
+  <view a:if="{{ showComment }}" class="book-review-container">
+    <view class="flex-container">
+      <view class="quotation-mark">"</view>
+      <view class="book-review">{{bookdetail.comments[0].content}}</view>
+    </view>
+    <view class="book-review-author">——{{bookdetail.comments[0].from}}</view>
+  </view>
+  <view class="book-position" style="magin-top:{{ showComment ? '58rpx' : '314rpx'}}">此书位于 5号楼 2层 东南角 B2格</view>
+  <view class="add-book-container" onTap="orderBook">我要预定</view>
 </view>

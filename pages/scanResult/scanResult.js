@@ -1,38 +1,82 @@
 let app = getApp()
-let addBookApiUrl = app.globalData.baseUrl
+
+import config from '../../config/index.js';
+import { ddPromise } from '../../config/utils.js';
 
 Page({
   data: {
-    bookPicUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Dwyane_Wade.jpg/440px-Dwyane_Wade.jpg",
-    bookName:"少数派报告",
-    bookAuthor:"菲利普·迪克",
-    bookIntor:"本书荟萃科幻鬼才菲利普·迪克最具代表性的短篇小说结集： 《第二代》《冒名顶替》本书荟萃科幻鬼才菲利普·迪克最具代表性的短篇小说结集： 《第二代》《冒名顶替》本书荟萃科幻鬼才菲利普·迪克最具代表性的短篇小说结集： 《第二代》《冒名顶替》本书荟萃科幻鬼才菲利普·迪克最具代表性的短篇小说结集： 《第二代》《冒名顶替》本书荟萃科幻鬼才菲利普·迪克最具代表性的短篇小说结集： 《第二代》《冒名顶替》本书荟萃科幻鬼才菲利普·迪克最具代表性的短篇小说结集： 《第二代》《冒名顶替》《规划小组》《少数派报告》《战争游戏》《啊，当个布洛贝尔人！》《死者的话》《全面回忆》和《电子蚂蚁》。  ",
-    bookReview:"Psycho-Pass的世界观设定完全脱胎于少数派报告啊，故事的内核也差不多，都是思考人类需要在高度程式化的社会里继续保持对人性的信任。",
-    bookReviewAuthor:"某光年"
+    onionId:"",
+    bookdetail:{},
+    showComment:false
   },
-  onLoad() {},
-  addBook() {
-    dd.showLoading();
-    dd.httpRequest({
-      url: addBookApiUrl,
+  onLoad(options) {
+    const { onionId } = options
+    this.setData({
+      onionId: onionId
+    })
+    this.getBookInfo(onionId)
+  },
+  getBookInfo(onionId) {
+    dd.showLoading()
+    let _this =this
+    ddPromise(dd.httpRequest)({
+      url: `${config.domain.common}/book/${onionId}`,
+      method: 'GET'
+    }).then(res => {
+      dd.hideLoading();
+      console.log('res', res)
+      _this.setData({
+        bookdetail: res.data
+      })
+      if (res.data.comments != null && res.data.comments.length!=0){
+        _this.setData({
+          showComment: true
+        })
+      }
+    }).catch(err => {
+      dd.hideLoading();
+      dd.showToast({
+        type: 'none',
+        content: '数据获取失败'
+      });
+    })
+  },
+  orderBook() {
+    dd.showLoading()
+    let _this = this
+    console.log("app.globalData.userInfo.id" + app.globalData.userInfo.id)
+    ddPromise(dd.httpRequest)({
+      url: `${config.domain.common}/book/order`,
       method: 'POST',
       data: {
-        bookName: this.data.bookName,
-        author: this.data.author,
-        bookIntro: this.bookIntro
-      },
-      dataType: 'json',
-      success: function(res) {
-        dd.redirectTo({
-          url: '/pages/typeInSuccess/typeInSuccess'
-        })
-      },
-      fail: function(res) {
-        dd.alert({ content: '图书添加失败' });
-      },
-      complete: function(res) {
-        dd.hideLoading();
+        onionId: _this.data.bookdetail.onionId,
+        userId: app.globalData.userInfo.id
       }
-    });
+    }).then(res => {
+      dd.hideLoading();
+      dd.showToast({
+        type: 'none',
+        content: res.data.message
+      });
+      if (!res.data.canOrder) {
+        return
+      }
+      console.log(_this.data.bookdetail)
+      let invalidTime = new Date(res.data.invalidTime).getTime()
+      let bookUrlEncode = encodeURIComponent(_this.data.bookdetail.coverImg)
+      let positionEncode = encodeURIComponent(_this.data.bookdetail.position)
+      let onionId = _this.data.bookdetail.onionId
+      let url = `/pages/reserveSuccess/reserveSuccess?invalidTime=${invalidTime}&bookUrlEncode=${bookUrlEncode}&positionEncode=${positionEncode}&onionId=${onionId}`
+      dd.redirectTo({
+        url: url
+      })
+    }).catch(err => {
+      dd.hideLoading();
+      console.log(err)
+      dd.showToast({
+        type: 'none',
+        content: '预定失败'
+      });
+    })
   }
 });
