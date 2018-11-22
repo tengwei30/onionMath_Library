@@ -36,7 +36,8 @@ Page({
     }).catch(err => {
       dd.hideLoading();
       dd.showToast({
-        type: 'none',
+        type: 'fail',
+        duration: '3000',
         content: '数据获取失败'
       });
     })
@@ -55,7 +56,8 @@ Page({
     }).then(res => {
       dd.hideLoading();
       dd.showToast({
-        type: 'none',
+        type: 'success',
+        duration: '3000',
         content: res.data.message
       });
       if (!res.data.canOrder) {
@@ -74,7 +76,8 @@ Page({
       dd.hideLoading();
       console.log(err)
       dd.showToast({
-        type: 'none',
+        type: 'fail',
+        duration: '3000',
         content: '预定失败'
       });
     })
