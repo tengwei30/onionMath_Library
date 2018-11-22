@@ -95,11 +95,21 @@ Page({
   },
   tapBookItem:function(res) {
     console.log('my', this.data.userId)
-    const { userId, myBorrowSeleted } = this.data
+    const { userId, myBorrowSeleted ,myReserveSeleted} = this.data
     if (myBorrowSeleted){
       dd.navigateTo({
         url: `/pages/returnbook/returnbook?onionId=${res.target.dataset.bookItem.onionId}&userId=${userId}`
       })
+    }
+    if(myReserveSeleted) {
+        let invalidTime = new Date(res.target.dataset.bookItem.invalidTime).getTime()
+        let bookUrlEncode = encodeURIComponent(res.target.dataset.bookItem.coverImg)
+        let positionEncode = encodeURIComponent(res.target.dataset.bookItem.position)
+        let onionId = res.target.dataset.bookItem.onionId
+        let url = `/pages/reserveSuccess/reserveSuccess?invalidTime=${invalidTime}&bookUrlEncode=${bookUrlEncode}&positionEncode=${positionEncode}&onionId=${onionId}`
+        dd.navigateTo({
+            url: url
+        })
     }
   }
 });
